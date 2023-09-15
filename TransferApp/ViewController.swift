@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     // MARK: Передача данных через свойство
     /*
      Создается излишняя связанность между вью контроллерами, так как в одном вью контроллере происходит
-     работа с другим вью контроллером.
+     работа с другим вью контроллером. Необходимо использовать протокол.
      */
     
     @IBAction func editDataWithProperty(_ sender: UIButton) {
@@ -57,6 +57,10 @@ class ViewController: UIViewController {
             return
         }
         destinationController.updatingData = dataLabel.text ?? ""
+    }
+    
+    @IBAction func unwindToFirstScreen(_ segue: UIStoryboardSegue){
+        
     }
     
 }

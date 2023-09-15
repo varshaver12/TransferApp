@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtM-G2-s2w">
-                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Здесь может быть ваша реклама" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtM-G2-s2w">
+                                <rect key="frame" x="75.5" y="437.5" width="263" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -98,11 +98,24 @@
                                     <action selector="saveDataWithProperty:" destination="bbR-xD-4gD" eventType="touchUpInside" id="jeo-7F-wfh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H46-H0-UBJ">
+                                <rect key="frame" x="30" y="556" width="354" height="31"/>
+                                <color key="backgroundColor" red="0.89000000000000001" green="0.36942978040000002" blue="0.31628971369999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Сохранить с помощью unwind segue"/>
+                                <connections>
+                                    <segue destination="4TH-cv-Y9b" kind="unwind" identifier="toFirstScreen" unwindAction="unwindToFirstScreen:" id="mFh-r7-NjF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7k1-kT-uZ1"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstItem="7k1-kT-uZ1" firstAttribute="trailing" secondItem="H46-H0-UBJ" secondAttribute="trailing" constant="30" id="9c7-hk-IJL"/>
+                            <constraint firstItem="H46-H0-UBJ" firstAttribute="leading" secondItem="7k1-kT-uZ1" secondAttribute="leading" constant="30" id="9db-lS-Rin"/>
                             <constraint firstItem="gjA-Ju-2dE" firstAttribute="leading" secondItem="7k1-kT-uZ1" secondAttribute="leading" constant="30" id="Mcc-d5-aDh"/>
+                            <constraint firstItem="H46-H0-UBJ" firstAttribute="top" secondItem="QWf-tB-Xn5" secondAttribute="bottom" constant="30" id="OD8-Vx-UO6"/>
                             <constraint firstItem="7k1-kT-uZ1" firstAttribute="trailing" secondItem="QWf-tB-Xn5" secondAttribute="trailing" constant="30" id="QXk-ji-q9p"/>
                             <constraint firstItem="QWf-tB-Xn5" firstAttribute="leading" secondItem="7k1-kT-uZ1" secondAttribute="leading" constant="30" id="apU-na-91J"/>
                             <constraint firstItem="7k1-kT-uZ1" firstAttribute="trailing" secondItem="gjA-Ju-2dE" secondAttribute="trailing" constant="30" id="cwq-cD-YLE"/>
@@ -116,6 +129,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RsN-Lt-UZo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="4TH-cv-Y9b" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1703" y="139"/>
         </scene>
