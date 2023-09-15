@@ -76,6 +76,21 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(editScreen, animated: true)
     }
     
+    // MARK: Передача данных с помощью делегата
+    
+    @IBAction func editDataWithClosure(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let editScreen = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        
+        editScreen.updatingData = dataLabel.text ?? ""
+        
+        editScreen.completionHandler = { [unowned self] updatedValue in
+            updateLabel(withText: updatedValue)
+        }
+        
+        self.navigationController?.pushViewController(editScreen, animated: true)
+    }
+    
 }
 
 extension ViewController: DataUpdateProtocol {

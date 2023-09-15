@@ -11,6 +11,7 @@ class SecondViewController: UIViewController, UpdatingDataController {
     
     var updatingData: String = ""
     var handleUpdatedDataDelegate: DataUpdateProtocol?
+    var completionHandler: ((String) -> Void)?
     
     @IBOutlet var dataTextField: UITextField!
     
@@ -61,6 +62,12 @@ class SecondViewController: UIViewController, UpdatingDataController {
         navigationController?.popViewController(animated: true)
     }
     
+    // Обновление значения label на ViewController с использованием dalegate
+    
+    @IBAction func saveDataWithClosure(_ sender: UIButton) {
+        completionHandler?(dataTextField.text ?? "")
+        navigationController?.popViewController(animated: true)
+    }
     
 
     deinit {
