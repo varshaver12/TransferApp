@@ -10,10 +10,14 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var dataLabel: UILabel!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     // MARK: Передача данных через свойство
@@ -21,6 +25,7 @@ class ViewController: UIViewController {
      Создается излишняя связанность между вью контроллерами, так как в одном вью контроллере происходит
      работа с другим вью контроллером.
      */
+    
     @IBAction func editDataWithProperty(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -31,5 +36,10 @@ class ViewController: UIViewController {
         // Переход к контроллеру редактирования
         self.navigationController?.pushViewController(editScreen as! UIViewController, animated: true)
     }
+    
+    func updateLabel(withText text: String) {
+        dataLabel.text = text
+    }
+    
 }
 

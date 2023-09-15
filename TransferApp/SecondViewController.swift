@@ -23,6 +23,13 @@ class SecondViewController: UIViewController, UpdatingDataController {
 
     }
     
+    // Обновление значения label на ViewController с использованием NavigationController
+    @IBAction func saveDataWithProperty(_ sender: UIButton) {
+        self.navigationController?.viewControllers.forEach({ viewController in
+            (viewController as? ViewController)?.updateLabel(withText: dataTextField.text ?? "")
+    })
+    }
+    
     private func updateTextFieldData(withText text: String?) {
 
         self.dataTextField.text = text

@@ -70,13 +70,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWf-tB-Xn5">
+                                <rect key="frame" x="30" y="495" width="354" height="31"/>
+                                <color key="backgroundColor" red="1" green="0.98603613430000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Сохранить с помощью свойства"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveDataWithProperty:" destination="bbR-xD-4gD" eventType="touchUpInside" id="jeo-7F-wfh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7k1-kT-uZ1"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="gjA-Ju-2dE" firstAttribute="leading" secondItem="7k1-kT-uZ1" secondAttribute="leading" constant="30" id="Mcc-d5-aDh"/>
+                            <constraint firstItem="7k1-kT-uZ1" firstAttribute="trailing" secondItem="QWf-tB-Xn5" secondAttribute="trailing" constant="30" id="QXk-ji-q9p"/>
+                            <constraint firstItem="QWf-tB-Xn5" firstAttribute="leading" secondItem="7k1-kT-uZ1" secondAttribute="leading" constant="30" id="apU-na-91J"/>
                             <constraint firstItem="7k1-kT-uZ1" firstAttribute="trailing" secondItem="gjA-Ju-2dE" secondAttribute="trailing" constant="30" id="cwq-cD-YLE"/>
                             <constraint firstItem="gjA-Ju-2dE" firstAttribute="centerY" secondItem="TX7-7g-gzd" secondAttribute="centerY" id="eXO-qB-nbe"/>
+                            <constraint firstItem="QWf-tB-Xn5" firstAttribute="top" secondItem="gjA-Ju-2dE" secondAttribute="bottom" constant="30" id="uWH-NI-Lmj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Сцена Б" id="A04-9j-Mtq"/>
