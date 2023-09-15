@@ -10,6 +10,7 @@ import UIKit
 class SecondViewController: UIViewController, UpdatingDataController {
     
     var updatingData: String = ""
+    var handleUpdatedDataDelegate: DataUpdateProtocol?
     
     @IBOutlet var dataTextField: UITextField!
     
@@ -35,10 +36,6 @@ class SecondViewController: UIViewController, UpdatingDataController {
         self.dataTextField.text = text
     }
     
-    deinit {
-        print("SecondVC is deleted")
-    }
-    
     // Обновление значения label на ViewController с использованием unwind segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,15 +54,17 @@ class SecondViewController: UIViewController, UpdatingDataController {
         destinationController.updateLabel(withText: dataTextField.text ?? "")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // Обновление значения label на ViewController с использованием dalegate
+    
+    @IBAction func saveDataWithDelegate(_ sender: UIButton) {
+        handleUpdatedDataDelegate?.onDataUpdate(data: dataTextField.text ?? "")
+        navigationController?.popViewController(animated: true)
     }
-    */
+    
+    
+
+    deinit {
+        print("SecondVC is deleted")
+    }
 
 }

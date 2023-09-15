@@ -63,5 +63,24 @@ class ViewController: UIViewController {
         
     }
     
+    // MARK: Передача данных с помощью делегата
+    
+    @IBAction func editDataWithDelegate(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let editScreen = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        
+        editScreen.updatingData = dataLabel.text ?? ""
+        
+        editScreen.handleUpdatedDataDelegate = self
+        
+        self.navigationController?.pushViewController(editScreen, animated: true)
+    }
+    
 }
 
+extension ViewController: DataUpdateProtocol {
+    func onDataUpdate(data: String) {
+        updateLabel(withText: data)
+    }
+    
+}
