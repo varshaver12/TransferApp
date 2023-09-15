@@ -37,13 +37,26 @@
                                     <action selector="editDataWithProperty:" destination="BYZ-38-t0r" eventType="touchUpInside" id="duf-rT-AQf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOa-L9-tNx">
+                                <rect key="frame" x="30" y="549.5" width="354" height="31"/>
+                                <color key="backgroundColor" red="0.89000000000000001" green="0.36942978040000002" blue="0.31628971369999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Изменить с помощью segue"/>
+                                <connections>
+                                    <segue destination="bbR-xD-4gD" kind="show" identifier="toEditScreen" id="s2o-FA-g8N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <constraints>
+                            <constraint firstItem="dOa-L9-tNx" firstAttribute="top" secondItem="xnX-Qo-Jk9" secondAttribute="bottom" constant="30" id="6Pa-3F-uiN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dOa-L9-tNx" secondAttribute="trailing" constant="30" id="E09-wf-mSl"/>
                             <constraint firstItem="OtM-G2-s2w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F7G-Ir-oiO"/>
                             <constraint firstItem="OtM-G2-s2w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nrd-ff-tXW"/>
                             <constraint firstItem="xnX-Qo-Jk9" firstAttribute="top" secondItem="OtM-G2-s2w" secondAttribute="bottom" constant="30" id="eFV-38-ohJ"/>
+                            <constraint firstItem="dOa-L9-tNx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="h60-7x-c8H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xnX-Qo-Jk9" secondAttribute="trailing" constant="30" id="v57-ID-NMV"/>
                             <constraint firstItem="xnX-Qo-Jk9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="zuy-VI-ODb"/>
                         </constraints>

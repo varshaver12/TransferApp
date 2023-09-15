@@ -35,6 +35,10 @@ class SecondViewController: UIViewController, UpdatingDataController {
         self.dataTextField.text = text
     }
     
+    deinit {
+        print("SecondVC is deleted")
+    }
+    
 
     /*
     // MARK: - Navigation

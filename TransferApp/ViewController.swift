@@ -41,5 +41,23 @@ class ViewController: UIViewController {
         dataLabel.text = text
     }
     
+    // MARK: Передача данных через segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "toEditScreen":
+            prepareEditScreen(segue)
+        default:
+            break
+        }
+    }
+    
+    private func prepareEditScreen(_ segue: UIStoryboardSegue) {
+        guard let destinationController = segue.destination as? SecondViewController else {
+            return
+        }
+        destinationController.updatingData = dataLabel.text ?? ""
+    }
+    
 }
 
